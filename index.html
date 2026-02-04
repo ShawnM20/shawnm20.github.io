@@ -1,132 +1,185 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Shawn Martin | Developer & Builder</title>
+  <title>Shawn Martin | Full-Stack Developer</title>
   <link rel="stylesheet" href="styles.css"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"/>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
 </head>
 <body>
 
-  <header>
+  <header class="header">
     <nav class="container">
-      <div class="logo">Shawn</div>
-      <ul class="nav-links">
+      <div class="logo">Shawn Martin</div>
+      <ul class="nav">
         <li><a href="#home">Home</a></li>
         <li><a href="#about">About</a></li>
-        <li><a href="#projects">Work</a></li>
-        <li><a href="#experience">Journey</a></li>
-        <li><a href="#contact">Connect</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
-      <button id="theme-toggle"><i class="fas fa-moon"></i></button>
+      <button id="theme-toggle" aria-label="Toggle theme">
+        <i class="fas fa-sun"></i>
+      </button>
     </nav>
   </header>
 
-  
-  <section id="home" class="hero">
-    <div class="container">
-      <div class="hero-content">
-        <h1>Hey, I'm Shawn Martin</h1>
-        <h2>Full-Stack Developer</h2>
-        <p>I build clean, interactive web experiences with JavaScript, React, Python, and more. From team capstones to solo experiments — I love turning ideas into things that work.</p>
-        <div class="buttons">
-          <a href="#projects" class="btn primary">See What I've Built</a>
-          <a href="https://github.com/ShawnM20" target="_blank" class="btn secondary"><i class="fab fa-github"></i> GitHub</a>
+  <main>
+    
+    <section id="home" class="hero">
+      <div class="container">
+        <h1>Welcome to my portfolio</h1>
+        <p class="tagline">Full-Stack Developer</p>
+        <p class="intro">
+          I build reliable, performant web applications with modern JavaScript, React, Node.js, Python, and clean architecture.
+        </p>
+        <div class="hero-actions">
+          <a href="#projects" class="btn btn-primary">View Projects</a>
+          <a href="https://github.com/ShawnM20" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
+            <i class="fab fa-github"></i> GitHub
+          </a>
         </div>
       </div>
+    </section>
+
+    <!-- About -->
+<section id="about" class="section">
+  <div class="container">
+    <h2>About Me</h2>
+
+    <div class="about-content">
+      <p>
+        Full-stack developer specializing in scalable, maintainable web applications. Experienced with React, Node.js, Express, Python (Flask), MySQL, REST APIs, authentication flows, and payment integrations.
+      </p>
+      <p>
+        I focus on writing clean, performant code, delivering intuitive interfaces, and solving real-world problems through technology.
+      </p>
     </div>
-  </section>
 
-  
-  <section id="about" class="section">
-    <div class="container">
-      <h2>A Bit About Me</h2>
-      <p>Recent CS grad (Dec 2025) from Southern Connecticut State University. Spent four years balancing code with D2 football — taught me discipline, teamwork under pressure, and bouncing back from setbacks. Now channeling that energy into software: full-stack apps, clean UI/UX, and solving real problems.</p>
-      <p>Im more passionate on making things intuitive and performant — whether it's an AI opponent in a game or a responsive dashboard.</p>
-
-      <h3>Core Skills</h3>
-      <div class="skills-grid">
-        <div class="skill"><i class="fab fa-js" style="color:#f7df1e"></i> JavaScript</div>
-        <div class="skill"><i class="fab fa-react" style="color:#61dafb"></i> React</div>
-        <div class="skill"><i class="fab fa-node-js" style="color:#68a063"></i> Node.js</div>
-        <div class="skill"><i class="fab fa-python" style="color:#4b8bbe"></i> Python</div>
-        <div class="skill"><i class="fas fa-database" style="color:#4479a1"></i> MySQL/SQL</div>
-        <div class="skill"><i class="fab fa-html5" style="color:#e34c26"></i> HTML/CSS</div>
-        <div class="skill"><i class="fab fa-git-alt" style="color:#f05032"></i> Git/GitHub</div>
-      </div>
+    <h3>Core Technologies</h3>
+    <div class="skills-grid">
+      <div class="skill"><i class="fab fa-js"></i> JavaScript</div>
+      <div class="skill"><i class="fab fa-react"></i> React</div>
+      <div class="skill"><i class="fab fa-node-js"></i> Node.js</div>
+      <div class="skill"><i class="fab fa-python"></i> Python</div>
+      <div class="skill"><i class="fas fa-database"></i> MySQL / SQL</div>
+      <div class="skill"><i class="fab fa-html5"></i> HTML / CSS / Tailwind</div>
+      <div class="skill"><i class="fab fa-git-alt"></i> Git & GitHub</div>
     </div>
-  </section>
+  </div>
+</section>
 
-  
-  <section id="projects" class="section">
-    <div class="container">
-      <h2>Featured Work</h2>
-      <div class="projects-grid">
-        <div class="project-card highlight">
-          <div class="project-img">
-            <img src="https://media2.dev.to/dynamic/image/width=800%2Cheight=%2Cfit=scale-down%2Cgravity=auto%2Cformat=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F16fo3y9k5h9ypibsxjle.png" alt="Tic-Tac-Toe Game Interface">
+    <!-- Projects -->
+    <section id="projects" class="section">
+      <div class="container">
+        <h2>Projects</h2>
+
+        
+        <div class="project-card">
+          <div class="project-header">
+            <h3>Contactless Restaurant POS System</h3>
+            <div class="project-tags">
+              <span>React</span>
+              <span>Node.js</span>
+              <span>Express</span>
+              <span>MySQL</span>
+              <span>Stripe</span>
+              <span>Tailwind CSS</span>
+            </div>
           </div>
-          <h3>Enhanced Tic-Tac-Toe</h3>
-          <p>Built as a personal challenge to level up my vanilla JS skills. Went beyond basics: unbeatable minimax AI, undo moves, dark mode toggle, persistent scores via localStorage, sound effects, win animations, and full mobile support.</p>
-          <p class="project-insight"><strong>Why this project?</strong> Proved I can handle state, algorithms, accessibility, and polish — skills I bring to any team or app.</p>
-          <div class="tags">
-            <span>Vanilla JS</span>
-            <span>Minimax AI</span>
-            <span>LocalStorage</span>
-            <span>Responsive</span>
-          </div>
-          <div class="project-links">
-            <a href="https://shawnm20.github.io/tic-tac-toe/" target="_blank" class="btn primary">Play Live</a>
-            <a href="https://github.com/ShawnM20/tic-tac-toe" target="_blank" class="btn secondary">View Code</a>
-          </div>
-        </div>
-      </div>
-      <p class="more-projects">More projects coming soon — check my GitHub or resume for details!</p>
-    </div>
-  </section>
 
-  
-  <section id="experience" class="section">
-    <div class="container">
-      <h2>My Journey So Far</h2>
-      <div class="exp-grid">
-        <div class="exp-item">
-          <h4>Full-Stack Development</h4>
-          <p>Team capstones & personal projects: React/Node, Python/Flask, databases, APIs, Stripe, real-time features.</p>
-        </div>
-        <div class="exp-item">
-          <h4>Teamwork & Leadership</h4>
-          <p>4 years D2 football + coaching kids: High-pressure collaboration, adaptability, mentoring under deadlines.</p>
-        </div>
-        <div class="exp-item">
-          <h4>Real-World Hustle</h4>
-          <p>Mover & fulfillment roles: Problem-solving on the fly, customer focus, efficiency under time constraints.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+          <p class="project-desc">
+            Full-stack capstone project: A modern web-based point-of-sale system for restaurants with contactless ordering, real-time updates, secure payments, and role-based access.
+          </p>
 
-  
-  <section id="contact" class="section contact">
-    <div class="container">
-      <h2>Let's Build Something</h2>
-      <p>I'm open to entry-level dev roles, freelance, or just conversating code/sports.</p>
-      <div class="contact-links">
-        <a href="mailto:slmartin2003@gmail.com"><i class="fas fa-envelope"></i> slmartin2003@gmail.com</a>
-        <a href="tel:9083800431"><i class="fas fa-phone"></i> (908) 380-0431</a>
-        <a href="https://www.linkedin.com/in/shawn-martin-7861a6363" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
-        <a href="https://github.com/ShawnM20" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+          <ul class="project-features">
+            <li>Responsive employee dashboard & customer ordering interface</li>
+            <li>Real-time order status synchronization</li>
+            <li>Secure payments via Stripe (credit card & Apple Pay in test mode)</li>
+            <li>QR-code table access and role-based authentication</li>
+            <li>Mobile-first design</li>
+            <li>Team collaboration via GitHub</li>
+          </ul>
+
+          <div class="project-actions">
+            <a href="https://github.com/MartinShawn03/CSC400-Project" target="_blank" class="btn btn-outline">
+              View Source Code on GitHub
+            </a>
+          </div>
+        </div>
+
+        
+        <div class="project-card">
+          <div class="project-header">
+            <h3>Enhanced Tic-Tac-Toe</h3>
+            <div class="project-tags">
+              <span>Vanilla JavaScript</span>
+              <span>Minimax AI</span>
+              <span>LocalStorage</span>
+              <span>Responsive Design</span>
+            </div>
+          </div>
+
+          <p class="project-desc">
+            A production-grade Tic-Tac-Toe game showcasing advanced JavaScript patterns, algorithmic depth, and polished user experience.
+          </p>
+
+          <ul class="project-features">
+            <li>Unbeatable AI powered by minimax with alpha-beta pruning</li>
+            <li>Undo/redo with clean state restoration</li>
+            <li>Persistent dark mode and score tracking via localStorage</li>
+            <li>Sound effects, animated win states, tie detection</li>
+            <li>Fully responsive & mobile-first layout</li>
+            <li>Accessibility improvements (keyboard navigation, ARIA labels)</li>
+          </ul>
+
+          <div class="project-actions">
+            <a href="https://shawnm20.github.io/tic-tac-toe/" target="_blank" class="btn btn-primary">Play Live</a>
+            <a href="https://github.com/ShawnM20/shawnm20.github.io/blob/main/tic-tac-toe/index.html" target="_blank" class="btn btn-outline">
+              View Source Code
+            </a>
+          </div>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="section">
+      <div class="container">
+        <h2>Get in Touch</h2>
+        <p class="contact-text">
+          Available for full-time roles, internships, freelance work, or discussions about development.
+        </p>
+
+        <div class="contact-grid">
+          <a href="mailto:slmartin2003@gmail.com" class="contact-item">
+            <i class="fas fa-envelope"></i>
+            slmartin2003@gmail.com
+          </a>
+          <a href="tel:+19083800431" class="contact-item">
+            <i class="fas fa-phone"></i>
+            (908) 380-0431
+          </a>
+          <a href="https://www.linkedin.com/in/shawn-martin-7861a6363" target="_blank" class="contact-item">
+            <i class="fab fa-linkedin"></i>
+            LinkedIn
+          </a>
+          <a href="https://github.com/ShawnM20" target="_blank" class="contact-item">
+            <i class="fab fa-github"></i>
+            GitHub
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
 
   <footer>
-    <p>© 2026 Shawn Martin •</p>
+    <div class="container">
+      <p>© 2026 Shawn Martin, All Rights Reserved</p>
+    </div>
   </footer>
 
   <script src="script.js"></script>
 </body>
-
 </html>
