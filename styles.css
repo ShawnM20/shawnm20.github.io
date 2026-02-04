@@ -72,21 +72,7 @@ nav {
   color: var(--red);
 }
 
-#theme-toggle {
-  background: none;
-  border: none;
-  font-size: 1.6rem;
-  color: var(--text-muted);
-  cursor: pointer;
-  transition: all 0.3s;
-}
 
-#theme-toggle:hover {
-  color: var(--red);
-  transform: rotate(15deg);
-}
-
-/* Hero */
 .hero {
   text-align: center;
   padding: 18rem 1rem 12rem;
@@ -177,19 +163,18 @@ nav {
   font-weight: 700;
 }
 
-/* About – centered text block */
+/* About */
 .about-content {
-  max-width: 820px;
+  max-width: 900px;
   margin: 0 auto 4rem;
   text-align: center;
-  font-size: 1.35rem;
-  color: var(--text-muted);
-  line-height: 1.8;
-  padding: 0 1.5rem;
 }
 
 .about-content p {
+  font-size: 1.35rem;
+  color: var(--text-muted);
   margin-bottom: 2.2rem;
+  font-weight: 300;
 }
 
 /* Skills */
@@ -349,7 +334,7 @@ nav {
   box-shadow: var(--shadow-md);
 }
 
-/* Footer */
+
 footer {
   text-align: center;
   padding: 6rem 1rem 5rem;
@@ -365,5 +350,4 @@ footer {
   .section { padding: 10rem 0; }
   .section h2 { font-size: 3rem; }
   .project-card { padding: 3rem; }
-  .about-content { padding: 0 1rem; }
 }
