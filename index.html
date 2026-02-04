@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Shawn Martin | Developer & Builder</title>
+  <link rel="stylesheet" href="styles.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+  <header>
+    <nav class="container">
+      <div class="logo">Shawn</div>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Work</a></li>
+        <li><a href="#experience">Journey</a></li>
+        <li><a href="#contact">Connect</a></li>
+      </ul>
+      <button id="theme-toggle"><i class="fas fa-moon"></i></button>
+    </nav>
+  </header>
+
+  <!-- Hero – Personal & Energetic -->
+  <section id="home" class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <h1>Hey, I'm Shawn Martin</h1>
+        <h2>Full-Stack Developer</h2>
+        <p>I build clean, interactive web experiences with JavaScript, React, Python, and more. From team capstones to solo experiments — I love turning ideas into things that work.</p>
+        <div class="buttons">
+          <a href="#projects" class="btn primary">See What I've Built</a>
+          <a href="https://github.com/ShawnM20" target="_blank" class="btn secondary"><i class="fab fa-github"></i> GitHub</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About – Story-focused, not resume bullets -->
+  <section id="about" class="section">
+    <div class="container">
+      <h2>A Bit About Me</h2>
+      <p>Recent CS grad (Dec 2025) from Southern Connecticut State University. Spent four years balancing code with D2 football — taught me discipline, teamwork under pressure, and bouncing back from setbacks. Now channeling that energy into software: full-stack apps, clean UI/UX, and solving real problems.</p>
+      <p>Im more passionate on making things intuitive and performant — whether it's an AI opponent in a game or a responsive dashboard.</p>
+
+      <h3>Core Skills</h3>
+      <div class="skills-grid">
+        <div class="skill"><i class="fab fa-js" style="color:#f7df1e"></i> JavaScript</div>
+        <div class="skill"><i class="fab fa-react" style="color:#61dafb"></i> React</div>
+        <div class="skill"><i class="fab fa-node-js" style="color:#68a063"></i> Node.js</div>
+        <div class="skill"><i class="fab fa-python" style="color:#4b8bbe"></i> Python</div>
+        <div class="skill"><i class="fas fa-database" style="color:#4479a1"></i> MySQL/SQL</div>
+        <div class="skill"><i class="fab fa-html5" style="color:#e34c26"></i> HTML/CSS</div>
+        <div class="skill"><i class="fab fa-git-alt" style="color:#f05032"></i> Git/GitHub</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects – Focus on Tic-Tac-Toe, make it the star -->
+  <section id="projects" class="section">
+    <div class="container">
+      <h2>Featured Work</h2>
+      <div class="projects-grid">
+        <div class="project-card highlight">
+          <div class="project-img">
+            <img src="https://media2.dev.to/dynamic/image/width=800%2Cheight=%2Cfit=scale-down%2Cgravity=auto%2Cformat=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2F16fo3y9k5h9ypibsxjle.png" alt="Tic-Tac-Toe Game Interface">
+          </div>
+          <h3>Enhanced Tic-Tac-Toe</h3>
+          <p>Built as a personal challenge to level up my vanilla JS skills. Went beyond basics: unbeatable minimax AI, undo moves, dark mode toggle, persistent scores via localStorage, sound effects, win animations, and full mobile support.</p>
+          <p class="project-insight"><strong>Why this project?</strong> Proved I can handle state, algorithms, accessibility, and polish — skills I bring to any team or app.</p>
+          <div class="tags">
+            <span>Vanilla JS</span>
+            <span>Minimax AI</span>
+            <span>LocalStorage</span>
+            <span>Responsive</span>
+          </div>
+          <div class="project-links">
+            <a href="https://shawnm20.github.io/tic-tac-toe/" target="_blank" class="btn primary">Play Live</a>
+            <a href="https://github.com/ShawnM20/tic-tac-toe" target="_blank" class="btn secondary">View Code</a>
+          </div>
+        </div>
+      </div>
+      <p class="more-projects">More projects coming soon — check my GitHub or resume for details!</p>
+    </div>
+  </section>
+
+  <!-- Experience – Framed uniquely, not resume copy -->
+  <section id="experience" class="section">
+    <div class="container">
+      <h2>My Journey So Far</h2>
+      <div class="exp-grid">
+        <div class="exp-item">
+          <h4>Full-Stack Development</h4>
+          <p>Team capstones & personal projects: React/Node, Python/Flask, databases, APIs, Stripe, real-time features.</p>
+        </div>
+        <div class="exp-item">
+          <h4>Teamwork & Leadership</h4>
+          <p>4 years D2 football + coaching kids: High-pressure collaboration, adaptability, mentoring under deadlines.</p>
+        </div>
+        <div class="exp-item">
+          <h4>Real-World Hustle</h4>
+          <p>Mover & fulfillment roles: Problem-solving on the fly, customer focus, efficiency under time constraints.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact – Simple & inviting -->
+  <section id="contact" class="section contact">
+    <div class="container">
+      <h2>Let's Build Something</h2>
+      <p>I'm open to entry-level dev roles, freelance, or just conversating code/sports.</p>
+      <div class="contact-links">
+        <a href="mailto:slmartin2003@gmail.com"><i class="fas fa-envelope"></i> slmartin2003@gmail.com</a>
+        <a href="tel:9083800431"><i class="fas fa-phone"></i> (908) 380-0431</a>
+        <a href="https://www.linkedin.com/in/shawn-martin-7861a6363" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+        <a href="https://github.com/ShawnM20" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 Shawn Martin •</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

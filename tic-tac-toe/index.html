@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tic-Tac-Toe • Enhanced Portfolio Project</title>
+  <style>
+    :root {
+      --bg: #f0f4ff;
+      --text: #1a1a2e;
+      --board-bg: #ffffff;
+      --cell-bg: #e8f0fe;
+      --cell-hover: #d0e0ff;
+      --x: #d81b60;
+      --o: #1e88e5;
+      --win: #00c853;
+      --status: #424242;
+    }
+
+    [data-theme="dark"] {
+      --bg: #0d1117;
+      --text: #c9d1d9;
+      --board-bg: #161b22;
+      --cell-bg: #21262d;
+      --cell-hover: #30363d;
+      --status: #8b949e;
+    }
+
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body {
+      min-height: 100vh;
+      background: var(--bg);
+      color: var(--text);
+      font-family: system-ui, sans-serif;
+      display: grid;
+      place-items: center;
+      padding: 16px;
+      transition: background 0.4s;
+    }
+
+    .game-container {
+      background: var(--board-bg);
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+      padding: 24px;
+      width: 100%;
+      max-width: 380px;
+    }
+
+    h1 { text-align:center; margin-bottom: 16px; font-size: 2rem; }
+
+    .status-area {
+      text-align: center;
+      margin-bottom: 16px;
+    }
+
+    .status {
+      font-size: 1.4rem;
+      font-weight: 600;
+      min-height: 1.6em;
+    }
+
+    .scores {
+      font-size: 1.1rem;
+      margin-top: 8px;
+      color: var(--status);
+    }
+
+    .board {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin: 0 auto 24px;
+      width: 100%;
+      max-width: 320px;
+      aspect-ratio: 1;
+    }
+
+    .cell {
+      background: var(--cell-bg);
+      border-radius: 12px;
+      display: grid;
+      place-items: center;
+      font-size: 5rem;
+      font-weight: bold;
+      cursor: pointer;
+      user-select: none;
+      transition: all 0.18s;
+      touch-action: manipulation; /* better mobile touch */
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .cell:hover, .cell:active { background: var(--cell-hover); transform: scale(1.03); }
+
+    .cell.x { color: var(--x); }
+    .cell.o { color: var(--o); }
+
+    .highlight-win {
+      background: var(--win) !important;
+      color: white !important;
+      animation: pulse 1.2s infinite;
+    }
+
+    @keyframes pulse { 0%,100% { transform: scale(1); } 50% { transform: scale(1.06); } }
+
+    .controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: center;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: all 0.2s;
+    }
+
+    .btn-primary  { background: #6200ea; color: white; }
+    .btn-primary:hover { background: #3700b3; }
+    .btn-secondary { background: #e0e0e0; color: #333; }
+    .btn-secondary:hover { background: #d0d0d0; }
+    .btn-toggle   { background: #9e9e9e; color: white; }
+
+    .mode-toggle {
+      margin: 16px 0;
+      text-align: center;
+      font-weight: 500;
+    }
+
+    @media (max-width: 500px) {
+      .board { max-width: 280px; gap: 8px; }
+      .cell { font-size: 4.2rem; }
+      h1 { font-size: 1.7rem; }
+    }
+  </style>
+</head>
+<body data-theme="light">
+
+<div class="game-container">
+  <h1>Tic-Tac-Toe</h1>
+
+  <div class="status-area">
+    <div class="status" id="status">Player X's turn</div>
+    <div class="scores" id="scores">X: 0 • O: 0 • Ties: 0</div>
+  </div>
+
+  <div class="board" id="board"></div>
+
+  <div class="mode-toggle">
+    Mode: <button id="toggleMode" class="btn-secondary">Player vs Player</button>
+  </div>
+
+  <div class="controls">
+    <button class="btn-primary" id="newGame">New Game</button>
+    <button class="btn-secondary" id="undo">Undo Last Move</button>
+    <button class="btn-secondary" id="resetScores">Reset Scores</button>
+    <button class="btn-toggle" id="toggleTheme">Dark Mode</button>
+  </div>
+</div>
+
+<audio id="clickSound" preload="auto">
+  <source src="https://assets.codepen.io/605876/click.mp3" type="audio/mpeg">
+</audio>
+<audio id="winSound" preload="auto">
+  <source src="https://assets.codepen.io/605876/win.mp3" type="audio/mpeg">
+</audio>
+<audio id="tieSound" preload="auto">
+  <source src="https://assets.codepen.io/605876/tie.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+// ──────────────────────────────────────────────
+// CONFIG & STATE
+// ──────────────────────────────────────────────
+
+const boardEl = document.getElementById('board');
+const statusEl = document.getElementById('status');
+const scoresEl = document.getElementById('scores');
+const toggleModeBtn = document.getElementById('toggleMode');
+const newGameBtn = document.getElementById('newGame');
+const undoBtn = document.getElementById('undo');
+const resetScoresBtn = document.getElementById('resetScores');
+const toggleThemeBtn = document.getElementById('toggleTheme');
+
+const clickSound = document.getElementById('clickSound');
+const winSound  = document.getElementById('winSound');
+const tieSound  = document.getElementById('tieSound');
+
+let currentPlayer = 'X';
+let gameBoard = Array(9).fill('');
+let gameActive = true;
+let vsComputer = false;
+let moveHistory = [];
+let scores = JSON.parse(localStorage.getItem('tttScores')) || { X: 0, O: 0, ties: 0 };
+
+const winningCombos = [
+  [0,1,2],[3,4,5],[6,7,8],
+  [0,3,6],[1,4,7],[2,5,8],
+  [0,4,8],[2,4,6]
+];
+
+// ──────────────────────────────────────────────
+// INIT & RENDER
+// ──────────────────────────────────────────────
+
+function init() {
+  loadTheme();
+  updateScoresDisplay();
+  createBoard();
+  updateModeButton();
+  updateUndoButton();
+}
+
+function createBoard() {
+  boardEl.innerHTML = '';
+  gameBoard.forEach((val, i) => {
+    const cell = document.createElement('div');
+    cell.classList.add('cell');
+    cell.dataset.index = i;
+    cell.textContent = val;
+    if (val) cell.classList.add(val.toLowerCase());
+    cell.addEventListener('click', handleClick);
+    boardEl.appendChild(cell);
+  });
+}
+
+function updateScoresDisplay() {
+  scoresEl.textContent = `X: ${scores.X} • O: ${scores.O} • Ties: ${scores.ties}`;
+}
+
+function updateModeButton() {
+  toggleModeBtn.textContent = vsComputer ? 'Player vs Computer' : 'Player vs Player';
+}
+
+function updateUndoButton() {
+  undoBtn.disabled = moveHistory.length === 0 || !gameActive;
+}
+
+// ──────────────────────────────────────────────
+// GAME LOGIC
+// ──────────────────────────────────────────────
+
+function handleClick(e) {
+  const idx = +e.target.dataset.index;
+  if (gameBoard[idx] !== '' || !gameActive) return;
+  if (vsComputer && currentPlayer === 'O') return; // wait for AI
+
+  makeMove(idx, currentPlayer);
+
+  if (vsComputer && gameActive && currentPlayer === 'O') {
+    setTimeout(aiMove, 400); // small delay for feel
+  }
+}
+
+function makeMove(idx, player) {
+  gameBoard[idx] = player;
+  moveHistory.push({ index: idx, player });
+  const cell = boardEl.querySelector(`[data-index="${idx}"]`);
+  cell.textContent = player;
+  cell.classList.add(player.toLowerCase());
+
+  playSound(clickSound);
+
+  if (checkWin(player)) {
+    endGame(`${player} wins! 🎉`);
+    scores[player]++;
+    highlightWinningCells();
+    playSound(winSound);
+  } else if (gameBoard.every(v => v !== '')) {
+    endGame("It's a tie!");
+    scores.ties++;
+    playSound(tieSound);
+  } else {
+    currentPlayer = player === 'X' ? 'O' : 'X';
+    statusEl.textContent = `${currentPlayer}'s turn${vsComputer && currentPlayer === 'O' ? ' (AI)' : ''}`;
+  }
+
+  saveScores();
+  updateUndoButton();
+}
+
+function checkWin(player) {
+  return winningCombos.some(combo =>
+    combo.every(i => gameBoard[i] === player)
+  );
+}
+
+function highlightWinningCells() {
+  for (let combo of winningCombos) {
+    if (combo.every(i => gameBoard[i] === gameBoard[combo[0]] && gameBoard[i])) {
+      combo.forEach(i => {
+        boardEl.querySelector(`[data-index="${i}"]`).classList.add('highlight-win');
+      });
+      break;
+    }
+  }
+}
+
+function endGame(msg) {
+  gameActive = false;
+  statusEl.textContent = msg;
+  statusEl.style.color = '#00c853';
+}
+
+
+
+function aiMove() {
+  let move;
+
+  const empty = gameBoard.map((v,i) => v==='' ? i : null).filter(v=>v!==null);
+  move = empty[Math.floor(Math.random() * empty.length)];
+
+
+  if (move !== undefined) makeMove(move, 'O');
+}
+
+
+// ──────────────────────────────────────────────
+// CONTROLS
+// ──────────────────────────────────────────────
+
+function resetGame(keepScores = true) {
+  currentPlayer = 'X';
+  gameBoard = Array(9).fill('');
+  gameActive = true;
+  moveHistory = [];
+  statusEl.textContent = `${currentPlayer}'s turn`;
+  statusEl.style.color = '';
+  createBoard();
+  updateUndoButton();
+  if (!keepScores) {
+    scores = { X: 0, O: 0, ties: 0 };
+    saveScores();
+  }
+}
+
+function undoLastMove() {
+  if (moveHistory.length === 0 || !gameActive) return;
+  const last = moveHistory.pop();
+  gameBoard[last.index] = '';
+  const cell = boardEl.querySelector(`[data-index="${last.index}"]`);
+  cell.textContent = '';
+  cell.classList.remove('x', 'o', 'highlight-win');
+  currentPlayer = last.player;
+  statusEl.textContent = `${currentPlayer}'s turn`;
+  updateUndoButton();
+}
+
+function saveScores() {
+  localStorage.setItem('tttScores', JSON.stringify(scores));
+  updateScoresDisplay();
+}
+
+function playSound(audioEl) {
+  audioEl.currentTime = 0;
+  audioEl.play().catch(() => {}); 
+}
+
+// ──────────────────────────────────────────────
+// EVENT LISTENERS
+// ──────────────────────────────────────────────
+
+newGameBtn.addEventListener('click', () => resetGame(true));
+resetScoresBtn.addEventListener('click', () => resetGame(false));
+undoBtn.addEventListener('click', undoLastMove);
+
+toggleModeBtn.addEventListener('click', () => {
+  vsComputer = !vsComputer;
+  updateModeButton();
+  resetGame(true);
+});
+
+toggleThemeBtn.addEventListener('click', () => {
+  const current = document.body.dataset.theme;
+  const next = current === 'dark' ? 'light' : 'dark';
+  document.body.dataset.theme = next;
+  localStorage.setItem('tttTheme', next);
+  toggleThemeBtn.textContent = next === 'dark' ? 'Light Mode' : 'Dark Mode';
+});
+
+function loadTheme() {
+  const saved = localStorage.getItem('tttTheme') || 'light';
+  document.body.dataset.theme = saved;
+  toggleThemeBtn.textContent = saved === 'dark' ? 'Light Mode' : 'Dark Mode';
+}
+
+// Start the game
+init();
+</script>
+</body>
+</html>
