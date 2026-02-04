@@ -19,9 +19,7 @@
         <li><a href="#projects">Projects</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
-      <button id="theme-toggle" aria-label="Toggle theme">
-        <i class="fas fa-sun"></i>
-      </button>
+      
     </nav>
   </header>
 
@@ -44,31 +42,30 @@
     </section>
 
     <!-- About -->
-<section id="about" class="section">
-  <div class="container">
-    <h2>About Me</h2>
+    <section id="about" class="section">
+      <div class="container">
+        <h2>About Me</h2>
+        <div class="about-content">
+          <p>
+            Full-stack developer specializing in scalable, maintainable web applications. Experienced with React, Node.js, Express, Python (Flask), MySQL, REST APIs, authentication flows, and payment integrations.
+          </p>
+          <p>
+            I focus on writing clean, performant code, delivering intuitive interfaces, and solving real-world problems through technology.
+          </p>
+        </div>
 
-    <div class="about-content">
-      <p>
-        Full-stack developer specializing in scalable, maintainable web applications. Experienced with React, Node.js, Express, Python (Flask), MySQL, REST APIs, authentication flows, and payment integrations.
-      </p>
-      <p>
-        I focus on writing clean, performant code, delivering intuitive interfaces, and solving real-world problems through technology.
-      </p>
-    </div>
-
-    <h3>Core Technologies</h3>
-    <div class="skills-grid">
-      <div class="skill"><i class="fab fa-js"></i> JavaScript</div>
-      <div class="skill"><i class="fab fa-react"></i> React</div>
-      <div class="skill"><i class="fab fa-node-js"></i> Node.js</div>
-      <div class="skill"><i class="fab fa-python"></i> Python</div>
-      <div class="skill"><i class="fas fa-database"></i> MySQL / SQL</div>
-      <div class="skill"><i class="fab fa-html5"></i> HTML / CSS / Tailwind</div>
-      <div class="skill"><i class="fab fa-git-alt"></i> Git & GitHub</div>
-    </div>
-  </div>
-</section>
+        <h3>Core Technologies</h3>
+        <div class="skills-grid">
+          <div class="skill"><i class="fab fa-js"></i> JavaScript</div>
+          <div class="skill"><i class="fab fa-react"></i> React</div>
+          <div class="skill"><i class="fab fa-node-js"></i> Node.js</div>
+          <div class="skill"><i class="fab fa-python"></i> Python</div>
+          <div class="skill"><i class="fas fa-database"></i> MySQL / SQL</div>
+          <div class="skill"><i class="fab fa-html5"></i> HTML / CSS / Tailwind</div>
+          <div class="skill"><i class="fab fa-git-alt"></i> Git & GitHub</div>
+        </div>
+      </div>
+    </section>
 
     <!-- Projects -->
     <section id="projects" class="section">
@@ -96,7 +93,7 @@
           <ul class="project-features">
             <li>Responsive employee dashboard & customer ordering interface</li>
             <li>Real-time order status synchronization</li>
-            <li>Secure payments via Stripe (credit card & Apple Pay in test mode)</li>
+            <li>Secure payments via Stripe (credit card & Apple Pay – test mode)</li>
             <li>QR-code table access and role-based authentication</li>
             <li>Mobile-first design</li>
             <li>Team collaboration via GitHub</li>
@@ -109,7 +106,7 @@
           </div>
         </div>
 
-        
+        <!-- Tic-Tac-Toe -->
         <div class="project-card">
           <div class="project-header">
             <h3>Enhanced Tic-Tac-Toe</h3>
@@ -126,7 +123,7 @@
           </p>
 
           <ul class="project-features">
-            <li>Unbeatable AI powered by minimax with alpha-beta pruning</li>
+            <li>AI powered by minimax with alpha-beta pruning</li>
             <li>Undo/redo with clean state restoration</li>
             <li>Persistent dark mode and score tracking via localStorage</li>
             <li>Sound effects, animated win states, tie detection</li>
@@ -176,10 +173,21 @@
 
   <footer>
     <div class="container">
-      <p>© 2026 Shawn Martin, All Rights Reserved</p>
+      <p>© 2026 Shawn Martin</p>
     </div>
   </footer>
 
-  <script src="script.js"></script>
+  
+  <script>
+    
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+  </script>
 </body>
 </html>
