@@ -3,13 +3,41 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Shawn Martin | Full-Stack Developer</title>
+  <title>Shawn Martin | Full-Stack & AI Developer</title>
   <link rel="stylesheet" href="styles.css"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"/>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <style>
+    /* Image styling - smaller and cleaner */
+    .project-image {
+      width: 100%;
+      max-height: 380px;
+      object-fit: contain;
+      border-radius: 12px;
+      margin-bottom: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      background: #1a1a2e;
+    }
+
+    .project-image:hover {
+      transform: scale(1.03);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+    }
+
+    .project-card {
+      overflow: hidden;
+    }
+
+    /* Make sure it looks good on mobile too */
+    @media (max-width: 768px) {
+      .project-image {
+        max-height: 300px;
+      }
+    }
+  </style>
 </head>
 <body>
-
   <header class="header">
     <nav class="container">
       <div class="logo">Shawn Martin</div>
@@ -19,18 +47,17 @@
         <li><a href="#projects">Projects</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
-      
     </nav>
   </header>
 
   <main>
-    
+    <!-- Hero -->
     <section id="home" class="hero">
       <div class="container">
         <h1>Welcome to my portfolio</h1>
-        <p class="tagline">Full-Stack Developer</p>
+        <p class="tagline">Full-Stack & AI Developer</p>
         <p class="intro">
-          I build reliable, performant web applications with modern JavaScript, React, Node.js, Python, and clean architecture.
+          I build reliable, performant web applications and intelligent AI solutions using modern JavaScript, React, Node.js, Python, and LLMs.
         </p>
         <div class="hero-actions">
           <a href="#projects" class="btn btn-primary">View Projects</a>
@@ -47,10 +74,10 @@
         <h2>About Me</h2>
         <div class="about-content">
           <p>
-            Full-stack developer specializing in scalable, maintainable web applications. Experienced with React, Node.js, Express, Python (Flask), MySQL, REST APIs, authentication flows, and payment integrations.
+            Full-stack developer with a strong focus on AI-powered applications. Experienced in building scalable web apps with React, Node.js, Python, and integrating large language models (LLMs) to create intelligent, interactive experiences.
           </p>
           <p>
-            I focus on writing clean, performant code, delivering intuitive interfaces, and solving real-world problems through technology.
+            I love turning complex problems into clean, user-friendly solutions — from traditional full-stack systems to modern AI chat assistants.
           </p>
         </div>
 
@@ -59,11 +86,13 @@
           <div class="skill"><i class="fab fa-js"></i> JavaScript</div>
           <div class="skill"><i class="fab fa-react"></i> React</div>
           <div class="skill"><i class="fab fa-node-js"></i> Node.js</div>
-          <div class="skill"><i class="fab fa-java"></i> Java</div>
           <div class="skill"><i class="fab fa-python"></i> Python</div>
+          <div class="skill"><i class="fas fa-brain"></i> AI / LLMs</div>
+          <div class="skill"><i class="fas fa-robot"></i> Chatbots & Agents</div>
           <div class="skill"><i class="fas fa-database"></i> MySQL / SQL</div>
           <div class="skill"><i class="fab fa-html5"></i> HTML / CSS / Tailwind</div>
           <div class="skill"><i class="fab fa-git-alt"></i> Git & GitHub</div>
+          <div class="skill"><i class="fas fa-plug"></i> REST APIs</div>
         </div>
       </div>
     </section>
@@ -73,7 +102,39 @@
       <div class="container">
         <h2>Projects</h2>
 
-        
+        <!-- GenChat Assistant - Featured -->
+        <div class="project-card">
+          <img src="images/genchat.png" 
+               alt="GenChat Assistant Screenshot" 
+               class="project-image">
+          <div class="project-header">
+            <h3>🧠 GenChat Assistant</h3>
+            <div class="project-tags">
+              <span>Python</span>
+              <span>AI / LLM</span>
+              <span>Chatbot</span>
+              <span>LangChain</span>
+              <span>API Integration</span>
+            </div>
+          </div>
+          <p class="project-desc">
+            A versatile modular AI chat assistant that delivers general knowledge and powerful custom "unique abilities" beyond typical chatbots.
+          </p>
+          <ul class="project-features">
+            <li>Conversational memory and context-aware responses</li>
+            <li>Extensible architecture with pluggable ability modules</li>
+            <li>Custom tools for specialized tasks and enhanced functionality</li>
+            <li>Clean, maintainable codebase with separation of concerns</li>
+            <li>Fast, responsive real-time chat interface</li>
+          </ul>
+          <div class="project-actions">
+            <a href="https://github.com/ShawnM20/genchat-assistant-" target="_blank" class="btn btn-outline">
+              View Source Code
+            </a>
+          </div>
+        </div>
+
+        <!-- Contactless Restaurant POS System -->
         <div class="project-card">
           <div class="project-header">
             <h3>Contactless Restaurant POS System</h3>
@@ -86,20 +147,16 @@
               <span>Tailwind CSS</span>
             </div>
           </div>
-
           <p class="project-desc">
             Full-stack capstone project: A modern web-based point-of-sale system for restaurants with contactless ordering, real-time updates, secure payments, and role-based access.
           </p>
-
           <ul class="project-features">
             <li>Responsive employee dashboard & customer ordering interface</li>
             <li>Real-time order status synchronization</li>
-            <li>Secure payments via Stripe (credit card & Apple Pay – test mode)</li>
+            <li>Secure payments via Stripe</li>
             <li>QR-code table access and role-based authentication</li>
             <li>Mobile-first design</li>
-            <li>Team collaboration via GitHub</li>
           </ul>
-
           <div class="project-actions">
             <a href="https://github.com/MartinShawn03/CSC400-Project" target="_blank" class="btn btn-outline">
               View Source Code on GitHub
@@ -107,7 +164,7 @@
           </div>
         </div>
 
-        <!-- Tic-Tac-Toe -->
+        <!-- Enhanced Tic-Tac-Toe -->
         <div class="project-card">
           <div class="project-header">
             <h3>Enhanced Tic-Tac-Toe</h3>
@@ -118,20 +175,15 @@
               <span>Responsive Design</span>
             </div>
           </div>
-
           <p class="project-desc">
             A production-grade Tic-Tac-Toe game showcasing advanced JavaScript patterns, algorithmic depth, and polished user experience.
           </p>
-
           <ul class="project-features">
             <li>AI powered by minimax with alpha-beta pruning</li>
             <li>Undo/redo with clean state restoration</li>
-            <li>Persistent dark mode and score tracking via localStorage</li>
-            <li>Sound effects, animated win states, tie detection</li>
-            <li>Fully responsive & mobile-first layout</li>
-            <li>Accessibility improvements (keyboard navigation, ARIA labels)</li>
+            <li>Persistent dark mode and score tracking</li>
+            <li>Fully responsive & accessible design</li>
           </ul>
-
           <div class="project-actions">
             <a href="https://shawnm20.github.io/tic-tac-toe/" target="_blank" class="btn btn-primary">Play Live</a>
             <a href="https://github.com/ShawnM20/shawnm20.github.io/blob/main/tic-tac-toe/index.html" target="_blank" class="btn btn-outline">
@@ -147,9 +199,8 @@
       <div class="container">
         <h2>Get in Touch</h2>
         <p class="contact-text">
-          Available for full-time roles, internships, freelance work, or discussions about development.
+          Available for full-time roles, internships, freelance work, or discussions about web development and AI projects.
         </p>
-
         <div class="contact-grid">
           <a href="mailto:slmartin2003@gmail.com" class="contact-item">
             <i class="fas fa-envelope"></i>
@@ -178,9 +229,7 @@
     </div>
   </footer>
 
-  
   <script>
-    
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
         e.preventDefault();
