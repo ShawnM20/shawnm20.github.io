@@ -698,4 +698,488 @@
           </div>
         </div>
       </div>
- 
+      <div class="reveal" style="transition-delay:.2s">
+        <!-- Interactive Terminal -->
+        <div class="terminal tilt-card">
+          <div class="terminal-bar">
+            <div class="terminal-dot red"></div>
+            <div class="terminal-dot yellow"></div>
+            <div class="terminal-dot green"></div>
+            <span style="color:#555870; font-size:.78rem; margin-left:.5rem; font-family:'JetBrains Mono',monospace">shawn@portfolio ~ </span>
+          </div>
+          <div class="terminal-body" id="terminal-body">
+            <div class="terminal-line"><span class="prompt">$ </span><span class="cmd">whoami</span></div>
+            <div class="terminal-line"><span class="out">shawn_martin — full-stack & AI dev</span></div>
+            <div class="terminal-line" style="margin-top:.5rem"><span class="prompt">$ </span><span class="cmd">skills --list</span></div>
+            <div class="terminal-line"><span class="out">[ React, Node.js, Python, AI/LLMs,</span></div>
+            <div class="terminal-line"><span class="out">  MySQL, TypeScript, REST APIs ]</span></div>
+            <div class="terminal-line" style="margin-top:.5rem"><span class="prompt">$ </span><span class="cmd">status</span></div>
+            <div class="terminal-line"><span class="out">🟢 Open to opportunities</span></div>
+            <div class="terminal-line" style="margin-top:.8rem"><span class="comment">// Try typing a command below ↓</span></div>
+            <div id="terminal-input-line">
+              <span class="prompt">$ </span>
+              <input id="terminal-input" placeholder="help" autocomplete="off" spellcheck="false" />
+              <span class="cursor-blink"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Skills -->
+    <div style="margin-top:5rem">
+      <p class="section-label reveal">Core Technologies</p>
+      <div class="skills-grid" style="margin-top:1.5rem">
+        <div class="skill-chip reveal"><i class="fab fa-js"></i>JavaScript</div>
+        <div class="skill-chip reveal" style="transition-delay:.05s"><i class="fab fa-react"></i>React</div>
+        <div class="skill-chip reveal" style="transition-delay:.1s"><i class="fab fa-node-js"></i>Node.js</div>
+        <div class="skill-chip reveal" style="transition-delay:.15s"><i class="fab fa-python"></i>Python</div>
+        <div class="skill-chip reveal" style="transition-delay:.2s"><i class="fas fa-brain"></i>AI / LLMs</div>
+        <div class="skill-chip reveal" style="transition-delay:.25s"><i class="fas fa-robot"></i>Chatbots</div>
+        <div class="skill-chip reveal" style="transition-delay:.3s"><i class="fas fa-database"></i>MySQL</div>
+        <div class="skill-chip reveal" style="transition-delay:.35s"><i class="fab fa-html5"></i>HTML / CSS</div>
+        <div class="skill-chip reveal" style="transition-delay:.4s"><i class="fab fa-git-alt"></i>Git</div>
+        <div class="skill-chip reveal" style="transition-delay:.45s"><i class="fas fa-plug"></i>REST APIs</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ─────────────── PROJECTS ─────────────── -->
+<section id="projects" class="section relative">
+  <div class="container">
+    <p class="section-label reveal">Selected work</p>
+    <h2 class="reveal" style="transition-delay:.1s">Projects</h2>
+    <p class="section-desc reveal" style="transition-delay:.2s">A collection of projects spanning AI, full-stack web development, and interactive experiences.</p>
+
+    <!-- GenChat -->
+    <div class="project-card tilt-card reveal">
+      <div class="project-number">01 / 04</div>
+      <div class="project-title">🧠 GenChat Assistant</div>
+      <img src="images/genchat.png" alt="GenChat Assistant" class="project-image" onerror="this.style.display='none'">
+      <div class="project-tags">
+        <span class="tag">Python</span>
+        <span class="tag">AI / LLM</span>
+        <span class="tag">LangChain</span>
+        <span class="tag">Chatbot</span>
+        <span class="tag">API Integration</span>
+      </div>
+      <p class="project-desc">A versatile modular AI chat assistant delivering general knowledge and custom "unique abilities" far beyond typical chatbots. Built on an extensible architecture with pluggable modules.</p>
+      <ul class="project-features">
+        <li>Conversational memory and context-aware responses</li>
+        <li>Extensible architecture with pluggable ability modules</li>
+        <li>Custom tools for specialized tasks and enhanced functionality</li>
+        <li>Clean, maintainable codebase with separation of concerns</li>
+      </ul>
+      <a href="https://github.com/ShawnM20/genchat-assistant-" target="_blank" class="btn btn-outline">View Source Code →</a>
+    </div>
+
+    <!-- Weather Atlas -->
+    <div class="project-card tilt-card reveal" style="transition-delay:.1s">
+      <div class="project-number">02 / 04</div>
+      <div class="project-title">⛅ Weather Atlas</div>
+      <div class="project-tags">
+        <span class="tag">React</span>
+        <span class="tag">TypeScript</span>
+        <span class="tag">Vite</span>
+        <span class="tag">Open-Meteo API</span>
+        <span class="tag">Responsive UI</span>
+      </div>
+      <p class="project-desc">A polished weather dashboard — search any city, check current conditions, and view a seven-day forecast in a clean responsive interface with Fahrenheit/Celsius toggle.</p>
+      <ul class="project-features">
+        <li>Automatic local weather lookup when location access is enabled</li>
+        <li>Fast city search powered by live geocoding and forecast APIs</li>
+        <li>Current conditions: temperature, feels-like, humidity, wind</li>
+        <li>Mobile-first, fully responsive layout</li>
+      </ul>
+      <a href="https://github.com/ShawnM20/react-weather-app" target="_blank" class="btn btn-outline">View Source Code →</a>
+    </div>
+
+    <!-- POS System -->
+    <div class="project-card tilt-card reveal" style="transition-delay:.15s">
+      <div class="project-number">03 / 04</div>
+      <div class="project-title">🍽 Contactless Restaurant POS</div>
+      <div class="project-tags">
+        <span class="tag">React</span>
+        <span class="tag">Node.js</span>
+        <span class="tag">Express</span>
+        <span class="tag">MySQL</span>
+        <span class="tag">Stripe</span>
+        <span class="tag">Tailwind CSS</span>
+      </div>
+      <p class="project-desc">Full-stack capstone: a modern web POS system for restaurants with contactless ordering, real-time updates, secure Stripe payments, and role-based access control.</p>
+      <ul class="project-features">
+        <li>Responsive employee dashboard and customer ordering interface</li>
+        <li>Real-time order status synchronization</li>
+        <li>QR-code table access and role-based authentication</li>
+        <li>Mobile-first design with Stripe payment integration</li>
+      </ul>
+      <a href="https://github.com/MartinShawn03/CSC400-Project" target="_blank" class="btn btn-outline">View Source Code →</a>
+    </div>
+
+    <!-- Tic Tac Toe -->
+    <div class="project-card tilt-card reveal" style="transition-delay:.2s">
+      <div class="project-number">04 / 04</div>
+      <div class="project-title">🎮 Enhanced Tic-Tac-Toe</div>
+      <div class="project-tags">
+        <span class="tag">Vanilla JS</span>
+        <span class="tag">Minimax AI</span>
+        <span class="tag">LocalStorage</span>
+        <span class="tag">Responsive</span>
+      </div>
+      <p class="project-desc">Production-grade Tic-Tac-Toe showcasing advanced JavaScript patterns, algorithmic depth with minimax + alpha-beta pruning, and polished UX.</p>
+      <ul class="project-features">
+        <li>AI powered by minimax with alpha-beta pruning</li>
+        <li>Undo/redo with clean state restoration</li>
+        <li>Persistent dark mode and score tracking via LocalStorage</li>
+        <li>Fully responsive and accessible design</li>
+      </ul>
+      <div style="display:flex; gap:1rem; flex-wrap:wrap;">
+        <a href="https://shawnm20.github.io/tic-tac-toe/" target="_blank" class="btn btn-primary">Play Live →</a>
+        <a href="https://github.com/ShawnM20/shawnm20.github.io/blob/main/tic-tac-toe/index.html" target="_blank" class="btn btn-outline">Source Code</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ─────────────── CONTACT ─────────────── -->
+<section id="contact" class="section relative">
+  <div class="container">
+    <p class="section-label reveal">Get in touch</p>
+    <h2 class="reveal" style="transition-delay:.1s">Let's work<br>together</h2>
+    <p class="section-desc reveal" style="transition-delay:.2s">Available for full-time roles, internships, freelance work, or just a conversation about web development and AI projects.</p>
+    <div class="contact-grid reveal" style="transition-delay:.3s">
+      <a href="mailto:slmartin2003@gmail.com" class="contact-item"><i class="fas fa-envelope"></i>slmartin2003@gmail.com</a>
+      <a href="tel:+19083800431" class="contact-item"><i class="fas fa-phone"></i>(908) 380-0431</a>
+      <a href="https://www.linkedin.com/in/shawn-martin-7861a6363" target="_blank" class="contact-item"><i class="fab fa-linkedin"></i>LinkedIn</a>
+      <a href="https://github.com/ShawnM20" target="_blank" class="contact-item"><i class="fab fa-github"></i>GitHub</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 Shawn Martin — Built with precision.</p>
+</footer>
+
+<script>
+// ═══════════════════════════════════════════════
+// CUSTOM CURSOR
+// ═══════════════════════════════════════════════
+const ring = document.getElementById('cursor-ring');
+const dot  = document.getElementById('cursor-dot');
+let rx = 0, ry = 0, tx = 0, ty = 0;
+
+document.addEventListener('mousemove', e => {
+  tx = e.clientX; ty = e.clientY;
+  dot.style.left = tx + 'px';
+  dot.style.top  = ty + 'px';
+});
+
+function animateCursor() {
+  rx += (tx - rx) * 0.12;
+  ry += (ty - ry) * 0.12;
+  ring.style.left = rx + 'px';
+  ring.style.top  = ry + 'px';
+  requestAnimationFrame(animateCursor);
+}
+animateCursor();
+
+document.querySelectorAll('a, button, .skill-chip, .contact-item, .project-card, input').forEach(el => {
+  el.addEventListener('mouseenter', () => document.body.classList.add('cursor-hover'));
+  el.addEventListener('mouseleave', () => document.body.classList.remove('cursor-hover'));
+});
+document.addEventListener('mousedown', () => document.body.classList.add('cursor-click'));
+document.addEventListener('mouseup',   () => document.body.classList.remove('cursor-click'));
+
+// Click burst
+document.addEventListener('click', e => {
+  for (let i = 0; i < 8; i++) {
+    const p = document.createElement('div');
+    p.className = 'burst-particle';
+    const angle = (i / 8) * Math.PI * 2;
+    const dist = 30 + Math.random() * 30;
+    p.style.setProperty('--tx', Math.cos(angle) * dist + 'px');
+    p.style.setProperty('--ty', Math.sin(angle) * dist + 'px');
+    p.style.left = e.clientX + 'px';
+    p.style.top  = e.clientY + 'px';
+    p.style.background = Math.random() > .5 ? '#00d4ff' : '#ff3c5c';
+    document.body.appendChild(p);
+    setTimeout(() => p.remove(), 700);
+  }
+});
+
+// ═══════════════════════════════════════════════
+// MOUSE RIPPLE
+// ═══════════════════════════════════════════════
+let lastRipple = 0;
+document.addEventListener('mousemove', e => {
+  const now = Date.now();
+  if (now - lastRipple < 120) return;
+  lastRipple = now;
+  const r = document.createElement('div');
+  r.className = 'ripple';
+  r.style.left = e.clientX + 'px';
+  r.style.top  = e.clientY + 'px';
+  r.style.width = r.style.height = '20px';
+  document.body.appendChild(r);
+  setTimeout(() => r.remove(), 900);
+});
+
+// ═══════════════════════════════════════════════
+// THREE.JS — DEEP SPACE SCENE
+// ═══════════════════════════════════════════════
+(function() {
+  const canvas = document.getElementById('bg-canvas');
+  const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+  renderer.setSize(window.innerWidth, window.innerHeight);
+
+  const scene = new THREE.Scene();
+  const camera = new THREE.PerspectiveCamera(70, window.innerWidth / window.innerHeight, 0.1, 300);
+  camera.position.z = 50;
+
+  // — Starfield —
+  const starGeo = new THREE.BufferGeometry();
+  const starCount = 3500;
+  const starPos = new Float32Array(starCount * 3);
+  const starSizes = new Float32Array(starCount);
+  for (let i = 0; i < starCount; i++) {
+    starPos[i*3]   = (Math.random() - .5) * 400;
+    starPos[i*3+1] = (Math.random() - .5) * 400;
+    starPos[i*3+2] = (Math.random() - .5) * 400;
+    starSizes[i] = Math.random() * 2.5;
+  }
+  starGeo.setAttribute('position', new THREE.BufferAttribute(starPos, 3));
+  starGeo.setAttribute('size', new THREE.BufferAttribute(starSizes, 1));
+  const starMat = new THREE.PointsMaterial({
+    color: 0xaaccff,
+    size: 0.5,
+    sizeAttenuation: true,
+    transparent: true,
+    opacity: 0.7
+  });
+  scene.add(new THREE.Points(starGeo, starMat));
+
+  // — Bright accent stars (cyan) —
+  const accentGeo = new THREE.BufferGeometry();
+  const accentCount = 120;
+  const aPos = new Float32Array(accentCount * 3);
+  for (let i = 0; i < accentCount; i++) {
+    aPos[i*3]   = (Math.random() - .5) * 200;
+    aPos[i*3+1] = (Math.random() - .5) * 200;
+    aPos[i*3+2] = (Math.random() - .5) * 200;
+  }
+  accentGeo.setAttribute('position', new THREE.BufferAttribute(aPos, 3));
+  const accentMat = new THREE.PointsMaterial({ color: 0x00d4ff, size: 1.2, transparent: true, opacity: 0.9 });
+  scene.add(new THREE.Points(accentGeo, accentMat));
+
+  // — Floating geometric wireframes —
+  const wireColor = new THREE.Color(0x00d4ff);
+
+  function makeWire(geo, x, y, z) {
+    const edges = new THREE.EdgesGeometry(geo);
+    const mat = new THREE.LineBasicMaterial({ color: wireColor, transparent: true, opacity: 0.18 });
+    const mesh = new THREE.LineSegments(edges, mat);
+    mesh.position.set(x, y, z);
+    scene.add(mesh);
+    return mesh;
+  }
+
+  const wires = [
+    makeWire(new THREE.IcosahedronGeometry(8, 0),   -30, 12, -20),
+    makeWire(new THREE.OctahedronGeometry(5, 0),     25, -8, -15),
+    makeWire(new THREE.TetrahedronGeometry(6, 0),   -18, -18, -10),
+    makeWire(new THREE.IcosahedronGeometry(4, 1),    32, 18, -25),
+    makeWire(new THREE.OctahedronGeometry(3, 0),    -35, 5, -30),
+    makeWire(new THREE.BoxGeometry(8,8,8),            0,  25, -30),
+  ];
+
+  // — Glowing torus —
+  const torusMat = new THREE.MeshBasicMaterial({ color: 0x00d4ff, wireframe: true, transparent: true, opacity: 0.12 });
+  const torus = new THREE.Mesh(new THREE.TorusGeometry(18, 0.5, 8, 60), torusMat);
+  torus.rotation.x = Math.PI / 3;
+  torus.position.z = -40;
+  scene.add(torus);
+
+  // — Nebula cloud (sprite planes) —
+  function makeNebula(x, y, z, size, color, opacity) {
+    const geo = new THREE.PlaneGeometry(size, size);
+    const mat = new THREE.MeshBasicMaterial({
+      color,
+      transparent: true,
+      opacity,
+      depthWrite: false,
+      blending: THREE.AdditiveBlending,
+      side: THREE.DoubleSide
+    });
+    const m = new THREE.Mesh(geo, mat);
+    m.position.set(x, y, z);
+    m.rotation.x = Math.random();
+    m.rotation.y = Math.random();
+    scene.add(m);
+    return m;
+  }
+
+  const nebulae = [
+    makeNebula(-20, 10, -60, 80, 0x001133, 0.4),
+    makeNebula(20, -10, -80, 100, 0x002244, 0.3),
+    makeNebula(0, 5, -50, 60, 0x00d4ff, 0.04),
+    makeNebula(-10, -5, -45, 50, 0xff3c5c, 0.03),
+  ];
+
+  // — Mouse parallax —
+  let mX = 0, mY = 0;
+  document.addEventListener('mousemove', e => {
+    mX = (e.clientX / window.innerWidth  - .5) * 2;
+    mY = (e.clientY / window.innerHeight - .5) * 2;
+  });
+
+  // — Scroll tracking —
+  let scrollY = 0;
+  window.addEventListener('scroll', () => { scrollY = window.scrollY; });
+
+  // — Animate —
+  const clock = new THREE.Clock();
+  function animate() {
+    requestAnimationFrame(animate);
+    const t = clock.getElapsedTime();
+
+    // Rotate stars slowly
+    starGeo.getAttribute('position').array;
+    scene.rotation.y = t * 0.015;
+
+    // Wire rotations
+    wires.forEach((w, i) => {
+      w.rotation.x = t * (0.1 + i * 0.03);
+      w.rotation.y = t * (0.08 + i * 0.025);
+      w.rotation.z = t * 0.05;
+    });
+
+    // Torus
+    torus.rotation.z = t * 0.04;
+    torus.rotation.x = Math.PI / 3 + Math.sin(t * .3) * .2;
+
+    // Nebulae pulse
+    nebulae.forEach((n, i) => {
+      n.material.opacity = (i < 2 ? 0.35 : 0.05) + Math.sin(t * .5 + i) * 0.01;
+    });
+
+    // Camera parallax
+    camera.position.x += (mX * 6 - camera.position.x) * 0.04;
+    camera.position.y += (-mY * 4 - camera.position.y) * 0.04;
+    camera.lookAt(0, 0, 0);
+
+    renderer.render(scene, camera);
+  }
+  animate();
+
+  window.addEventListener('resize', () => {
+    camera.aspect = window.innerWidth / window.innerHeight;
+    camera.updateProjectionMatrix();
+    renderer.setSize(window.innerWidth, window.innerHeight);
+  });
+})();
+
+// ═══════════════════════════════════════════════
+// SCROLL REVEAL
+// ═══════════════════════════════════════════════
+const revealEls = document.querySelectorAll('.reveal');
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
+}, { threshold: 0.15 });
+revealEls.forEach(el => obs.observe(el));
+
+// ═══════════════════════════════════════════════
+// TILT CARDS (3D hover)
+// ═══════════════════════════════════════════════
+document.querySelectorAll('.tilt-card').forEach(card => {
+  card.addEventListener('mousemove', e => {
+    const r = card.getBoundingClientRect();
+    const cx = r.left + r.width / 2;
+    const cy = r.top  + r.height / 2;
+    const dx = (e.clientX - cx) / (r.width  / 2);
+    const dy = (e.clientY - cy) / (r.height / 2);
+    card.style.transform = `perspective(800px) rotateY(${dx * 5}deg) rotateX(${-dy * 4}deg) translateZ(6px)`;
+  });
+  card.addEventListener('mouseleave', () => {
+    card.style.transform = '';
+    card.style.transition = 'transform .5s';
+    setTimeout(() => card.style.transition = '', 500);
+  });
+});
+
+// ═══════════════════════════════════════════════
+// INTERACTIVE TERMINAL
+// ═══════════════════════════════════════════════
+const termBody = document.getElementById('terminal-body');
+const termInput = document.getElementById('terminal-input');
+const inputLine = document.getElementById('terminal-input-line');
+
+const cmds = {
+  help: () => [
+    '  whoami       — who is shawn?',
+    '  skills       — list tech stack',
+    '  projects     — show project list',
+    '  contact      — get contact info',
+    '  status       — availability',
+    '  clear        — clear terminal',
+    '  hire         — 👀',
+  ],
+  whoami: () => ['shawn_martin: full-stack & AI developer, NJ', 'building intelligent web experiences since day one'],
+  skills: () => ['JavaScript · React · Node.js · Python', 'AI/LLMs · LangChain · MySQL · Tailwind', 'TypeScript · REST APIs · Git · HTML/CSS'],
+  projects: () => ['1. GenChat Assistant — AI chatbot (Python + LangChain)', '2. Weather Atlas — React + TypeScript dashboard', '3. Contactless POS — Full-stack restaurant system', '4. Tic-Tac-Toe — Minimax AI game'],
+  contact: () => ['email: slmartin2003@gmail.com', 'phone: (908) 380-0431', 'github: github.com/ShawnM20', 'linkedin: linkedin.com/in/shawn-martin-7861a6363'],
+  status: () => ['🟢 Open to full-time roles, internships,', '   freelance work & interesting problems'],
+  hire: () => ['smart choice 😎', 'email: slmartin2003@gmail.com'],
+  clear: () => null,
+};
+
+function addLine(text, type = 'out') {
+  const d = document.createElement('div');
+  d.className = 'terminal-line';
+  d.innerHTML = `<span class="${type}">${text}</span>`;
+  termBody.insertBefore(d, inputLine);
+}
+
+termInput.addEventListener('keydown', e => {
+  if (e.key !== 'Enter') return;
+  const val = termInput.value.trim().toLowerCase();
+  termInput.value = '';
+  if (!val) return;
+
+  addLine('$ ' + val, 'prompt');
+
+  if (val === 'clear') {
+    // Remove all lines except input
+    Array.from(termBody.children).forEach(c => {
+      if (c.id !== 'terminal-input-line') c.remove();
+    });
+    return;
+  }
+
+  const fn = cmds[val];
+  if (fn) {
+    const out = fn();
+    if (out) out.forEach(l => addLine(l));
+  } else {
+    addLine(`command not found: ${val} — try 'help'`, 'comment');
+  }
+  termBody.scrollTop = termBody.scrollHeight;
+});
+
+// ═══════════════════════════════════════════════
+// SMOOTH SCROLL
+// ═══════════════════════════════════════════════
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    e.preventDefault();
+    document.querySelector(a.getAttribute('href'))?.scrollIntoView({ behavior: 'smooth' });
+  });
+});
+</script>
+</body>
+</html>
