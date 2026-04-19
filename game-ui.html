@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Game Experience</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="game-styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+<body>
+    <!-- Game Loading Screen -->
+    <div id="gameLoading" class="game-loading">
+        <div class="loading-content">
+            <div class="loading-spinner"></div>
+            <h2 class="loading-text">INITIALIZING PORTFOLIO EXPERIENCE</h2>
+            <div class="loading-bar">
+                <div class="loading-progress"></div>
+            </div>
+            <p class="loading-subtitle">Preparing 3D environment...</p>
+        </div>
+    </div>
+
+    <!-- Game Menu -->
+    <div id="gameMenu" class="game-menu hidden">
+        <div class="menu-content">
+            <h1 class="game-title">PORTFOLIO EXPLORER</h1>
+            <div class="menu-options">
+                <button class="menu-btn" id="startGame">
+                    <span class="btn-icon">🚀</span>
+                    <span class="btn-text">START EXPLORATION</span>
+                </button>
+                <button class="menu-btn" id="instructionsBtn">
+                    <span class="btn-icon">📖</span>
+                    <span class="btn-text">HOW TO PLAY</span>
+                </button>
+                <button class="menu-btn" id="settingsBtn">
+                    <span class="btn-icon">⚙️</span>
+                    <span class="btn-text">SETTINGS</span>
+                </button>
+            </div>
+            <div class="menu-footer">
+                <p>Use WASD to move • Mouse to look • Click to interact</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Game HUD -->
+    <div id="gameHUD" class="game-hud hidden">
+        <!-- Top HUD -->
+        <div class="hud-top">
+            <div class="hud-left">
+                <div class="score-display">
+                    <span class="score-label">OBJECTIVES</span>
+                    <span class="score-value" id="objectivesCount">0/8</span>
+                </div>
+                <div class="health-display">
+                    <span class="health-label">ENERGY</span>
+                    <div class="health-bar">
+                        <div class="health-fill" id="energyBar"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="hud-right">
+                <div class="mini-map">
+                    <div class="mini-map-content">
+                        <div class="player-dot"></div>
+                        <div class="objective-dots"></div>
+                    </div>
+                </div>
+                <div class="game-time">
+                    <span id="gameTimer">00:00</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom HUD -->
+        <div class="hud-bottom">
+            <div class="controls-hint">
+                <span class="control-key">WASD</span> Move • 
+                <span class="control-key">MOUSE</span> Look • 
+                <span class="control-key">CLICK</span> Interact • 
+                <span class="control-key">SCROLL</span> Zoom
+            </div>
+            <div class="interaction-prompt" id="interactionPrompt">
+                Press E to interact
+            </div>
+        </div>
+    </div>
+
+    <!-- Instructions Modal -->
+    <div id="instructionsModal" class="modal hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>🎮 HOW TO PLAY</h2>
+                <button class="modal-close" id="closeInstructions">×</button>
+            </div>
+            <div class="modal-body">
+                <div class="instruction-section">
+                    <h3>🕹 MOVEMENT</h3>
+                    <ul>
+                        <li><strong>W/A/S/D</strong> - Move forward/left/back/right</li>
+                        <li><strong>SPACE</strong> - Jump/Fly up</li>
+                        <li><strong>SHIFT</strong> - Fly down</li>
+                        <li><strong>MOUSE</strong> - Look around</li>
+                        <li><strong>SCROLL</strong> - Zoom in/out</li>
+                    </ul>
+                </div>
+                <div class="instruction-section">
+                    <h3>🎯 OBJECTIVES</h3>
+                    <ul>
+                        <li>Explore the 3D portfolio environment</li>
+                        <li>Click on floating objects to interact</li>
+                        <li>Collect all 8 energy crystals</li>
+                        <li>Discover hidden portfolio sections</li>
+                        <li>Activate the central energy core</li>
+                    </ul>
+                </div>
+                <div class="instruction-section">
+                    <h3>⚡ INTERACTIONS</h3>
+                    <ul>
+                        <li><strong>LEFT CLICK</strong> - Interact with objects</li>
+                        <li><strong>RIGHT CLICK</strong> - Secondary interaction</li>
+                        <li><strong>E KEY</strong> - Interact when prompted</li>
+                        <li><strong>ESC</strong> - Pause/Menu</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Game Over Screen -->
+    <div id="gameOver" class="game-over hidden">
+        <div class="game-over-content">
+            <h1 class="game-over-title">EXPLORATION COMPLETE</h1>
+            <div class="final-stats">
+                <div class="stat-item">
+                    <span class="stat-label">Time:</span>
+                    <span class="stat-value" id="finalTime">00:00</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Objects Found:</span>
+                    <span class="stat-value" id="finalObjects">0/8</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Score:</span>
+                    <span class="stat-value" id="finalScore">0</span>
+                </div>
+            </div>
+            <div class="game-over-actions">
+                <button class="menu-btn" id="playAgain">
+                    <span class="btn-icon">🔄</span>
+                    <span class="btn-text">PLAY AGAIN</span>
+                </button>
+                <button class="menu-btn" id="viewPortfolio">
+                    <span class="btn-icon">📄</span>
+                    <span class="btn-text">VIEW PORTFOLIO</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Game Container -->
+    <div id="gameContainer" class="game-container">
+        <!-- 3D Game Canvas -->
+        <div id="threejs-container" class="threejs-container"></div>
+        
+        <!-- Portfolio Content (Hidden by default) -->
+        <div id="portfolioContent" class="portfolio-content hidden">
+            <!-- Your existing portfolio content goes here -->
+            <header class="header">
+                <nav>
+                    <div class="logo">PORTFOLIO</div>
+                    <ul class="nav">
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#skills">Skills</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </nav>
+            </header>
+            
+            <main>
+                <section class="hero" id="home">
+                    <div class="hero-content">
+                        <h1>Shawn M</h1>
+                        <p class="tagline">Full Stack Developer</p>
+                        <p class="intro">Creating innovative web experiences with cutting-edge technology</p>
+                        <div class="hero-actions">
+                            <a href="#projects" class="btn btn-primary">View Projects</a>
+                            <a href="#contact" class="btn btn-outline">Get In Touch</a>
+                        </div>
+                    </div>
+                </section>
+                
+                <section class="section" id="about">
+                    <h2>About Me</h2>
+                    <div class="about-content">
+                        <p>Passionate developer with expertise in modern web technologies and 3D experiences.</p>
+                        <p>I specialize in creating interactive, performant applications that push the boundaries of web development.</p>
+                    </div>
+                </section>
+                
+                <section class="section" id="projects">
+                    <h2>Projects</h2>
+                    <div class="projects-grid">
+                        <!-- Project cards would go here -->
+                    </div>
+                </section>
+                
+                <section class="section" id="skills">
+                    <h2>Skills</h2>
+                    <div class="skills-grid">
+                        <!-- Skill items would go here -->
+                    </div>
+                </section>
+                
+                <section class="section" id="contact">
+                    <h2>Contact</h2>
+                    <div class="contact-grid">
+                        <!-- Contact items would go here -->
+                    </div>
+                </section>
+            </main>
+            
+            <footer>
+                <p>&copy; 2024 Shawn M. All rights reserved.</p>
+            </footer>
+        </div>
+    </div>
+
+    <!-- Game Scripts -->
+    <script src="game-engine.js"></script>
+    <script src="game-ui.js"></script>
+    <script src="game-audio.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
