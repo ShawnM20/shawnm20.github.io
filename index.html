@@ -842,34 +842,32 @@
         <a href="https://github.com/ShawnM20/shawnm20.github.io/blob/main/tic-tac-toe/index.html" target="_blank" class="btn btn-outline">Source Code</a>
       </div>
     </div>
-    </div>
+
+    <!-- Job Board -->
+    <div class="project-card tilt-card reveal" style="transition-delay:.25s">
+      <div class="project-number">05 / 05</div>
+      <div class="project-title">💼 Job Board</div>
+      <div class="project-tags">
+        <span class="tag">React</span>
+        <span class="tag">Node.js</span>
+        <span class="tag">Express</span>
+        <span class="tag">MongoDB</span>
+        <span class="tag">JWT Auth</span>
+        <span class="tag">Tailwind CSS</span>
+        <span class="tag">Multer</span>
+      </div>
+      <p class="project-desc">A full-stack MERN job board where employers can post and manage listings, and applicants can browse openings and submit applications with resume uploads — all secured with JWT authentication.</p>
+      <ul class="project-features">
+        <li>JWT-based authentication with bcrypt password hashing</li>
+        <li>Resume/CV file uploads with validation (PDF, DOC, DOCX)</li>
+        <li>Protected routes — only authenticated users can post or delete jobs</li>
+        <li>Real-time search and filter across job listings</li>
+        <li>Admin view for managing all incoming applications</li>
+      </ul>
+      <a href="https://github.com/ShawnM20/job-board" target="_blank" class="btn btn-outline">View Source Code →</a>
     </div>
 
-  <div class="project-card tilt-card reveal" style="transition-delay:.25s">
-  <div class="project-number">05 / 05</div>
-  <div class="project-title">💼 Job Board</div>
-  <div class="project-tags">
-    <span class="tag">React</span>
-    <span class="tag">Node.js</span>
-    <span class="tag">Express</span>
-    <span class="tag">MongoDB</span>
-    <span class="tag">JWT Auth</span>
-    <span class="tag">Tailwind CSS</span>
-    <span class="tag">Multer</span>
   </div>
-  <p class="project-desc">A full-stack MERN job board where employers can post and manage listings, and applicants can browse openings and submit applications with resume uploads — all secured with JWT authentication.</p>
-  <ul class="project-features">
-    <li>JWT-based authentication with bcrypt password hashing</li>
-    <li>Resume/CV file uploads with validation (PDF, DOC, DOCX)</li>
-    <li>Protected routes — only authenticated users can post or delete jobs</li>
-    <li>Real-time search and filter across job listings</li>
-    <li>Admin view for managing all incoming applications</li>
-  </ul>
-  
-  <div style="display:flex; gap:1rem; flex-wrap:wrap;">
-    <a href="https://github.com/ShawnM20/job-board" target="_blank" class="btn btn-outline">View Source Code</a>
-  </div>
-</div>
 </section>
 
 <div class="divider"></div>
@@ -895,9 +893,7 @@
 </footer>
 
 <script>
-// ═══════════════════════════════════════════════
-// CUSTOM CURSOR
-// ═══════════════════════════════════════════════
+
 const ring = document.getElementById('cursor-ring');
 const dot  = document.getElementById('cursor-dot');
 let rx = 0, ry = 0, tx = 0, ty = 0;
@@ -941,9 +937,7 @@ document.addEventListener('click', e => {
   }
 });
 
-// ═══════════════════════════════════════════════
-// MOUSE RIPPLE
-// ═══════════════════════════════════════════════
+
 let lastRipple = 0;
 document.addEventListener('mousemove', e => {
   const now = Date.now();
@@ -958,9 +952,7 @@ document.addEventListener('mousemove', e => {
   setTimeout(() => r.remove(), 900);
 });
 
-// ═══════════════════════════════════════════════
-// THREE.JS — DEEP SPACE SCENE
-// ═══════════════════════════════════════════════
+
 (function() {
   const canvas = document.getElementById('bg-canvas');
   const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
@@ -1113,18 +1105,14 @@ document.addEventListener('mousemove', e => {
   });
 })();
 
-// ═══════════════════════════════════════════════
-// SCROLL REVEAL
-// ═══════════════════════════════════════════════
+
 const revealEls = document.querySelectorAll('.reveal');
 const obs = new IntersectionObserver(entries => {
   entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
 }, { threshold: 0.15 });
 revealEls.forEach(el => obs.observe(el));
 
-// ═══════════════════════════════════════════════
-// TILT CARDS (3D hover)
-// ═══════════════════════════════════════════════
+
 document.querySelectorAll('.tilt-card').forEach(card => {
   card.addEventListener('mousemove', e => {
     const r = card.getBoundingClientRect();
@@ -1141,9 +1129,7 @@ document.querySelectorAll('.tilt-card').forEach(card => {
   });
 });
 
-// ═══════════════════════════════════════════════
-// INTERACTIVE TERMINAL
-// ═══════════════════════════════════════════════
+
 const termBody = document.getElementById('terminal-body');
 const termInput = document.getElementById('terminal-input');
 const inputLine = document.getElementById('terminal-input-line');
@@ -1200,9 +1186,7 @@ termInput.addEventListener('keydown', e => {
   termBody.scrollTop = termBody.scrollHeight;
 });
 
-// ═══════════════════════════════════════════════
-// SMOOTH SCROLL
-// ═══════════════════════════════════════════════
+
 document.querySelectorAll('a[href^="#"]').forEach(a => {
   a.addEventListener('click', e => {
     e.preventDefault();
