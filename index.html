@@ -776,25 +776,32 @@
       <a href="https://github.com/ShawnM20/genchat-assistant-" target="_blank" class="btn btn-outline">View Source Code →</a>
     </div>
 
-    <!-- Weather Atlas -->
+    <!-- Second Brain -->
     <div class="project-card tilt-card reveal" style="transition-delay:.1s">
       <div class="project-number">02 / 06</div>
-      <div class="project-title">⛅ Weather Atlas</div>
+      <div class="project-title">🧠 Second Brain — RAG Knowledge Base</div>
       <div class="project-tags">
-        <span class="tag">React</span>
+        <span class="tag">Next.js 16</span>
         <span class="tag">TypeScript</span>
-        <span class="tag">Vite</span>
-        <span class="tag">Open-Meteo API</span>
-        <span class="tag">Responsive UI</span>
+        <span class="tag">RAG Pipeline</span>
+        <span class="tag">pgvector</span>
+        <span class="tag">Voyage AI</span>
+        <span class="tag">Groq LLaMA 3.3</span>
+        <span class="tag">Supabase</span>
+        <span class="tag">Clerk</span>
       </div>
-      <p class="project-desc">A polished weather dashboard, search any city, check current conditions, and view a seven-day forecast in a clean responsive interface with Fahrenheit/Celsius toggle.</p>
+      <p class="project-desc">A full-stack RAG-powered personal knowledge base. Upload PDFs, Word docs, and text files — then ask natural-language questions and get streaming answers with inline source citations drawn directly from your content. Built with a custom pipeline, no LangChain abstractions.</p>
       <ul class="project-features">
-        <li>Automatic local weather lookup when location access is enabled</li>
-        <li>Fast city search powered by live geocoding and forecast APIs</li>
-        <li>Current conditions: temperature, feels-like, humidity, wind</li>
-        <li>Mobile-first, fully responsive layout</li>
+        <li>Custom RAG pipeline: text extraction → recursive chunking → Voyage AI batch embeddings → pgvector HNSW index</li>
+        <li>Async fire-and-forget document processing with real-time status polling</li>
+        <li>Streaming chat responses via Vercel AI SDK with [Source N] inline citations</li>
+        <li>Row-level security in Supabase — documents are private per authenticated user</li>
+        <li>Per-user rate limiting, persistent session history, and auto-generated chat titles</li>
       </ul>
-      <a href="https://github.com/ShawnM20/react-weather-app" target="_blank" class="btn btn-outline">View Source Code →</a>
+      <div style="display:flex; gap:1rem; flex-wrap:wrap;">
+        <a href="https://second-brain-alpha-six.vercel.app" target="_blank" class="btn btn-primary">Try Live →</a>
+        <a href="https://github.com/ShawnM20/second-brain" target="_blank" class="btn btn-outline">Source Code</a>
+      </div>
     </div>
 
  <div class="project-card tilt-card reveal" style="transition-delay:.3s">
