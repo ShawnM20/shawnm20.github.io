@@ -368,20 +368,20 @@ footer{
   </div>
   <div class="da-hero-stats">
     <div class="da-stat-item">
-      <div class="da-stat-val" data-target="1.29" data-prefix="$" data-suffix="M">$0M</div>
-      <div class="da-stat-lbl">Revenue Risk Identified</div>
+      <div class="da-stat-val" data-target="1.06" data-prefix="$" data-suffix="M">$0M</div>
+      <div class="da-stat-lbl">Revenue at Risk Sized</div>
     </div>
     <div class="da-stat-item">
-      <div class="da-stat-val" data-target="77.5" data-suffix="%">0%</div>
-      <div class="da-stat-lbl">ML Model Accuracy</div>
+      <div class="da-stat-val" data-target="96" data-suffix="K+">0K+</div>
+      <div class="da-stat-lbl">Orders Analyzed</div>
     </div>
     <div class="da-stat-item">
-      <div class="da-stat-val" data-target="400" data-suffix="+">0+</div>
-      <div class="da-stat-lbl">Players Analyzed</div>
+      <div class="da-stat-val" data-target="61" data-suffix="%">0%</div>
+      <div class="da-stat-lbl">Bad Reviews at 4+ Days Late</div>
     </div>
     <div class="da-stat-item">
       <div class="da-stat-val" data-target="7043" data-suffix="">0</div>
-      <div class="da-stat-lbl">Records Modeled</div>
+      <div class="da-stat-lbl">Customers Modeled</div>
     </div>
   </div>
   <div class="scroll-hint"><div class="scroll-line"></div>scroll</div>
@@ -425,9 +425,9 @@ footer{
             <div class="terminal-line da-only"><span class="out">shawn_martin - data analyst &amp; ML engineer</span></div>
             <div class="terminal-line da-only" style="margin-top:.5rem"><span class="prompt">$ </span><span class="cmd">stack --tools</span></div>
             <div class="terminal-line da-only"><span class="out">[ Python, SQL, pandas, scikit-learn,</span></div>
-            <div class="terminal-line da-only"><span class="out">&nbsp;&nbsp;Tableau, NLP, REST APIs ]</span></div>
+            <div class="terminal-line da-only"><span class="out">&nbsp;&nbsp;PostgreSQL, Power BI, Tableau ]</span></div>
             <div class="terminal-line da-only" style="margin-top:.5rem"><span class="prompt">$ </span><span class="cmd">metrics --key</span></div>
-            <div class="terminal-line da-only"><span class="out">$1.29M revenue risk | 77.5% RF accuracy</span></div>
+            <div class="terminal-line da-only"><span class="out">$1.06M revenue at risk | 96K orders analyzed</span></div>
             <div class="terminal-line da-only" style="margin-top:.5rem"><span class="prompt">$ </span><span class="cmd">status</span></div>
             <div class="terminal-line da-only"><span class="out">&#129002; Open to Data Analyst / ML Engineer roles</span></div>
             <div class="terminal-line da-only" style="margin-top:.8rem"><span class="comment">// Try typing a command below &#8595;</span></div>
@@ -464,8 +464,8 @@ footer{
         <div class="skill-chip reveal" style="transition-delay:.2s"><i class="fas fa-chart-bar"></i>Tableau</div>
         <div class="skill-chip reveal" style="transition-delay:.25s"><i class="fas fa-project-diagram"></i>ETL Pipelines</div>
         <div class="skill-chip reveal" style="transition-delay:.3s"><i class="fas fa-brain"></i>Random Forest</div>
-        <div class="skill-chip reveal" style="transition-delay:.35s"><i class="fas fa-comment-dots"></i>NLP</div>
-        <div class="skill-chip reveal" style="transition-delay:.4s"><i class="fas fa-plug"></i>REST APIs</div>
+        <div class="skill-chip reveal" style="transition-delay:.35s"><i class="fas fa-chart-pie"></i>Power BI</div>
+        <div class="skill-chip reveal" style="transition-delay:.4s"><i class="fas fa-database"></i>PostgreSQL</div>
         <div class="skill-chip reveal" style="transition-delay:.45s"><i class="fab fa-git-alt"></i>Git</div>
       </div>
     </div>
@@ -489,14 +489,13 @@ footer{
         <img src="images/genchat.png" alt="GenChat Assistant" class="project-image" onerror="this.style.display='none'">
         <div class="project-tags">
           <span class="tag">Python</span><span class="tag">AI / LLM</span>
-          <span class="tag">LangChain</span><span class="tag">Chatbot</span><span class="tag">API Integration</span>
+          <span class="tag">LangChain</span><span class="tag">Flask</span><span class="tag">Groq</span>
         </div>
-        <p class="project-desc">A versatile modular AI chat assistant delivering general knowledge and custom &#8220;unique abilities&#8221; far beyond typical chatbots. Built on an extensible architecture with pluggable modules.</p>
+        <p class="project-desc">A real-time AI chat assistant built with Flask, LangChain, and Groq (Llama 3.3). It streams answers token by token and runs a live web search for time-sensitive questions, grounding its answers in current results instead of outdated training data.</p>
         <ul class="project-features">
-          <li>Conversational memory and context-aware responses</li>
-          <li>Extensible architecture with pluggable ability modules</li>
-          <li>Custom tools for specialized tasks and enhanced functionality</li>
-          <li>Clean, maintainable codebase with separation of concerns</li>
+          <li>Streaming responses with per-session conversation history</li>
+          <li>Live DuckDuckGo web search triggered by time-sensitive questions</li>
+          <li>System prompt that tells the model to admit when it can&#39;t find current info</li>
         </ul>
         <a href="https://github.com/ShawnM20/genchat-assistant-" target="_blank" class="btn btn-outline">View Source Code &#8594;</a>
       </div>
@@ -528,15 +527,15 @@ footer{
         <div class="project-number">03 / 06</div>
         <div class="project-title">&#129302; AI Application Tracker</div>
         <div class="project-tags">
-          <span class="tag">Node.js</span><span class="tag">Express</span>
-          <span class="tag">MongoDB</span><span class="tag">OpenAI API</span><span class="tag">React</span>
+          <span class="tag">React</span><span class="tag">Tailwind CSS</span>
+          <span class="tag">Firebase</span><span class="tag">OpenAI API</span>
         </div>
-        <p class="project-desc">An intelligent ecosystem designed to manage the job hunt lifecycle. Featuring smart interview preparation and automated application analysis to give candidates a competitive edge.</p>
+        <p class="project-desc">A job search manager that tracks every application from Applied to Offer, with reminders, a calendar, and analytics, plus AI-generated interview questions tailored to the role.</p>
         <ul class="project-features">
-          <li>AI-powered resume analysis and optimization tips</li>
-          <li>Smart Interview Prep module for practicing common industry questions</li>
-          <li>REST API backend for tracking application status and deadlines</li>
-          <li>Clean, modern dashboard for centralizing your job search</li>
+          <li>Firebase authentication with each user&#39;s applications stored in Firestore</li>
+          <li>Status tracking, follow-up reminders, and a calendar view</li>
+          <li>Analytics on response, interview, and offer rates</li>
+          <li>OpenAI-generated interview questions with prompt-injection filtering</li>
         </ul>
         <div style="display:flex;gap:1rem;flex-wrap:wrap;">
           <a href="https://ai-application-tracker-alpha.vercel.app/" target="_blank" class="btn btn-primary">Try Live &#8594;</a>
@@ -609,71 +608,72 @@ footer{
     <div class="da-only">
       <div class="project-card tilt-card reveal">
         <div class="project-number">01 / 04</div>
-        <div class="project-title">&#128201; Customer Churn &amp; Revenue Risk Pipeline</div>
-        <div class="project-metric">&#128176; $1.29M in annual revenue at risk identified before churn occurred</div>
+        <div class="project-title">&#128230; E-Commerce Delivery Performance Analysis</div>
+        <div class="project-metric">&#128202; Negative reviews jump from 10% to 61% once deliveries run 4+ days late</div>
         <div class="project-tags">
-          <span class="tag">Python</span><span class="tag">Random Forest</span>
-          <span class="tag">NLP</span><span class="tag">SQL</span>
-          <span class="tag">Tableau</span><span class="tag">scikit-learn</span>
+          <span class="tag">PostgreSQL</span><span class="tag">SQL</span>
+          <span class="tag">Power BI</span><span class="tag">DAX</span>
         </div>
-        <p class="project-desc">Gives retention teams a prioritized list of at-risk accounts before they churn. End-to-end ML pipeline on 7,043 telecom customers using Random Forest (77.5% accuracy) plus NLP sentiment analysis on reviews - the kind of signal most churn models ignore. SQL cohort analysis revealed month-to-month contracts churn at 43% vs. 3% for two-year contracts, visualized in a Tableau executive dashboard any non-technical stakeholder can act on.</p>
+        <p class="project-desc">Analyzed 96K+ orders across 8 relational tables from the Olist Brazilian e-commerce dataset to find what drives late deliveries and how much they hurt customers. Satisfaction holds up for short delays, then falls off a cliff at 4 days late, so the business should focus on stopping long delays, not every delay.</p>
         <ul class="project-features">
-          <li>77.5% Random Forest accuracy on 7,043 customer records</li>
-          <li>NLP sentiment scoring incorporated as a predictive feature</li>
-          <li>SQL cohort analysis: 43% vs. 3% churn by contract type</li>
-          <li>Tableau executive dashboard for non-technical leadership</li>
+          <li>CTEs and window functions in PostgreSQL across 8 joined tables</li>
+          <li>Customers with a late first order had an 18% lower repeat purchase rate</li>
+          <li>Rio de Janeiro: 13.5% late rate, more than double S&atilde;o Paulo&#39;s 5.9%</li>
+          <li>Power BI dashboard with DAX measures, plus 4 data-backed recommendations</li>
         </ul>
-        <a href="https://public.tableau.com/app/profile/shawn.martin8149/viz/CustomerChurnRevenueRiskDashboard_17813140017150/CustomerChurnRevenueRiskDashboard" target="_blank" class="btn btn-outline">View Source &#8594;</a>
+        <a href="https://github.com/ShawnM20/olist-delivery-analysis" target="_blank" class="btn btn-outline">View Source &#8594;</a>
       </div>
 
       <div class="project-card tilt-card reveal" style="transition-delay:.1s">
         <div class="project-number">02 / 04</div>
-        <div class="project-title">&#128200; Market Pipeline Predictor</div>
-        <div class="project-metric">&#9889; Eliminated manual hourly data collection across 4 live assets</div>
+        <div class="project-title">&#128201; Customer Churn &amp; Revenue Risk Pipeline</div>
+        <div class="project-metric">&#128176; $1.06M in annual revenue at risk across 1,562 high-risk customers</div>
         <div class="project-tags">
-          <span class="tag">Python</span><span class="tag">SQLite</span>
-          <span class="tag">REST APIs</span><span class="tag">Linear Regression</span>
-          <span class="tag">Tableau</span><span class="tag">ETL</span>
+          <span class="tag">Python</span><span class="tag">Random Forest</span>
+          <span class="tag">SQL</span><span class="tag">SQLite</span>
+          <span class="tag">Tableau</span><span class="tag">scikit-learn</span>
         </div>
-        <p class="project-desc">Automated time-series pipeline ingesting real-time market data for BTC, ETH, NVDA, and MSFT. SQL window queries (LAG/LEAD) flag anomalies exceeding 5% hourly movement - giving traders an automated early-warning system. Linear Regression model forecasts hourly prices, visualized in a Tableau dual-axis dashboard.</p>
+        <p class="project-desc">End-to-end churn pipeline on 7,043 telecom customers that gives retention teams a prioritized list of at-risk accounts. Every customer is scored with 5-fold cross-validation, so no one is scored by a model that already saw them. Month-to-month customers turned out to drive 97% of the revenue at risk.</p>
         <ul class="project-features">
-          <li>REST API ingestion for 4 assets, hourly automated SQLite appends</li>
-          <li>LAG/LEAD window queries flag &gt;5% price anomalies in real time</li>
-          <li>Linear Regression price forecasting with Tableau visualization</li>
+          <li>Random Forest, 77% cross-validated accuracy</li>
+          <li>SQL cohort analysis: 43% vs. 3% churn by contract type</li>
+          <li>Month-to-month contracts drive $1.02M of the $1.06M at risk</li>
+          <li>Tableau dashboard of revenue at risk, churn rate, and risk by tenure</li>
         </ul>
-        <a href="https://public.tableau.com/app/profile/shawn.martin8149/viz/MarketPipelinePredictor/Dashboard1" target="_blank" class="btn btn-outline">View Source &#8594;</a>
+        <a href="https://github.com/ShawnM20/churn-revenue-risk-pipeline" target="_blank" class="btn btn-outline">View Source &#8594;</a>
       </div>
 
       <div class="project-card tilt-card reveal" style="transition-delay:.15s">
         <div class="project-number">03 / 04</div>
-        <div class="project-title">&#127936; NBA Player Value Analysis</div>
-        <div class="project-metric">&#127919; 400+ players analyzed for cost-per-performance efficiency</div>
+        <div class="project-title">&#128200; Market Pipeline Predictor</div>
+        <div class="project-metric">&#9889; Hourly automated price collection for BTC, ETH, NVDA, and MSFT</div>
         <div class="project-tags">
-          <span class="tag">Python</span><span class="tag">SQL</span>
-          <span class="tag">pandas</span><span class="tag">SQLite</span><span class="tag">REST APIs</span>
+          <span class="tag">Python</span><span class="tag">SQLite</span>
+          <span class="tag">yfinance</span><span class="tag">Linear Regression</span>
+          <span class="tag">Tableau</span><span class="tag">ETL</span>
         </div>
-        <p class="project-desc">The kind of tool front offices use to find undervalued athletes - queries real-time 2024-25 NBA statistics via the NBA.com API across 400+ players to surface top-quartile production at below-median salary. SQLite and pandas power front-office-style cost-per-performance analysis across the full league.</p>
+        <p class="project-desc">Python ETL pipeline that pulls hourly prices from Yahoo Finance into SQLite on a schedule, with a unique index so no hour is stored twice. SQL window functions flag large hourly moves and track whether they continued or reversed. A Linear Regression forecast is tested against a simple &quot;same as last hour&quot; baseline.</p>
         <ul class="project-features">
-          <li>NBA.com API integration for real-time 2024-25 season data</li>
-          <li>Custom valuation model across 400+ players</li>
-          <li>Cost-per-performance analysis: output vs. salary across full league</li>
+          <li>Scheduled hourly with Windows Task Scheduler, de-duplicated on insert</li>
+          <li>LAG/LEAD queries flag 2%+ hourly moves and the next hour&#39;s reaction</li>
+          <li>Model vs. naive baseline: honest benchmark of short-term price forecasting</li>
         </ul>
-        <a href="https://public.tableau.com/app/profile/shawn.martin8149/viz/NBASalaryValueAnalysis/Dashboard1" target="_blank" class="btn btn-outline">View Source &#8594;</a>
+        <a href="https://github.com/ShawnM20/market-pipeline-predictor" target="_blank" class="btn btn-outline">View Source &#8594;</a>
       </div>
 
       <div class="project-card tilt-card reveal" style="transition-delay:.2s">
         <div class="project-number">04 / 04</div>
         <div class="project-title">&#129504; Second Brain - RAG Knowledge Base</div>
-        <div class="project-metric">&#9889; Sub-100ms semantic search across unlimited personal documents</div>
+        <div class="project-metric">&#9889; Chat with your own documents, with answers that cite their sources</div>
         <div class="project-tags">
           <span class="tag">Next.js</span><span class="tag">TypeScript</span>
           <span class="tag">RAG</span><span class="tag">pgvector</span><span class="tag">Supabase</span>
         </div>
-        <p class="project-desc">Solves the analyst&#39;s real problem of losing insights across hundreds of documents - semantic search that retrieves relevant content in under 100ms. Custom RAG pipeline with Voyage AI embeddings and HNSW indexing. Built for real multi-user deployment with authentication and row-level security.</p>
+        <p class="project-desc">Upload PDFs, Word docs, and text files, then ask questions in plain English and get streamed answers with inline source citations. Custom RAG pipeline with Voyage AI embeddings and a pgvector HNSW index, built for multiple users with authentication and rate limiting.</p>
         <ul class="project-features">
-          <li>Sub-100ms semantic search via pgvector HNSW indexing</li>
+          <li>Semantic search via pgvector HNSW indexing</li>
           <li>Multi-format ingestion: PDF, DOCX, MD, TXT</li>
-          <li>Production-grade auth, row-level security, per-user rate limiting</li>
+          <li>Clerk auth, per-user data isolation, per-user rate limiting</li>
         </ul>
         <div style="display:flex;gap:1rem;flex-wrap:wrap;">
           <a href="https://second-brain-alpha-six.vercel.app" target="_blank" class="btn btn-primary">Try Live &#8594;</a>
@@ -902,9 +902,9 @@ function setMode(mode){
     :'Data analyst with a <strong>strong foundation in ML and pipeline engineering</strong>. I build automated data pipelines, predictive models, and SQL-driven dashboards that translate raw data into business decisions.';
   document.getElementById('about-p2').innerHTML=isSWE
     ?'I love turning complex problems into <strong>clean, user-friendly solutions</strong>, from traditional full-stack systems to modern AI chat assistants and real-time platforms.'
-    :'I find the signal in messy data - whether that\'s <strong>identifying $1.29M in at-risk revenue</strong>, building automated market monitoring, or surfacing undervalued athletes from 400+ records.';
+    :'I find the signal in messy data - whether that\'s <strong>finding the 4-day delivery threshold where customer satisfaction collapses</strong>, sizing $1.06M in revenue at risk from churn, or building automated market monitoring.';
   document.getElementById('stat1').textContent=isSWE?'6':'4';
-  document.getElementById('stat3').textContent=isSWE?'∞':'77.5%';
+  document.getElementById('stat3').textContent=isSWE?'∞':'77%';
   document.getElementById('stat3-lbl').textContent=isSWE?'Problems solved':'ML accuracy';
   document.getElementById('projects-desc').textContent=isSWE
     ?'A collection of projects spanning AI, full-stack web development, and interactive experiences.'
@@ -929,7 +929,7 @@ function animateDAStats(){
       const p=Math.min((now-start)/dur,1);
       const ease=1-Math.pow(1-p,3);
       const v=target*ease;
-      el.textContent=prefix+(isFloat?v.toFixed(2):Math.round(v))+suffix;
+      el.textContent=prefix+(isFloat?v.toFixed(2):Math.round(v).toLocaleString('en-US'))+suffix;
       if(p<1)requestAnimationFrame(step);
     }
     requestAnimationFrame(step);
@@ -945,7 +945,7 @@ const SWE_CMDS={
   help:()=>['  whoami     - who is shawn?','  skills     - tech stack','  projects   - project list','  contact    - contact info','  status     - availability','  clear      - clear terminal','  hire       - 👀'],
   whoami:()=>['shawn_martin: full-stack & AI developer, NJ','building intelligent web experiences since day one'],
   skills:()=>['JavaScript · React · Node.js · Python','AI/LLMs · LangChain · PostgreSQL · Tailwind','TypeScript · REST APIs · Git · HTML/CSS'],
-  projects:()=>['1. GenChat Assistant  - AI chatbot (Python + LangChain)','2. Second Brain       - RAG knowledge base (Next.js + pgvector)','3. AI App Tracker     - job hunt + OpenAI interview prep','4. Contactless POS    - full-stack restaurant system','5. Job Board          - MERN + JWT auth','6. FitForge           - React Native fitness app'],
+  projects:()=>['1. GenChat Assistant  - AI chatbot (Python + LangChain)','2. Second Brain       - RAG knowledge base (Next.js + pgvector)','3. AI App Tracker     - React + Firebase + OpenAI prep','4. Contactless POS    - full-stack restaurant system','5. Job Board          - MERN + JWT auth','6. FitForge           - React Native fitness app'],
   contact:()=>['email:    slmartin2003@gmail.com','phone:    (908) 380-0431','github:   github.com/ShawnM20','linkedin: linkedin.com/in/shawn-martin-7861a6363'],
   status:()=>['🟢 Open to full-time roles, internships,','   freelance work & interesting problems'],
   hire:()=>['smart choice 😎','email: slmartin2003@gmail.com'],
@@ -955,9 +955,9 @@ const SWE_CMDS={
 const DA_CMDS={
   help:()=>['  whoami     - who is shawn?','  tools      - data stack','  projects   - project list','  metrics    - key numbers','  contact    - contact info','  status     - availability','  clear      - clear terminal','  hire       - 👀'],
   whoami:()=>['shawn_martin: data analyst & ML engineer, NJ','turning messy data into decisions since day one'],
-  tools:()=>['Python · SQL · pandas · NumPy · scikit-learn','Tableau · SQLite · NLP · REST APIs · Git','Random Forest · ETL Pipelines · Linear Regression'],
-  projects:()=>['1. Churn Pipeline   - $1.29M revenue risk identified','2. Market Predictor - auto hourly ingestion, 4 assets','3. NBA Value Model  - 400+ players analyzed','4. Second Brain     - sub-100ms semantic search'],
-  metrics:()=>['$1.29M   revenue risk identified before churn','77.5%    Random Forest accuracy (7,043 records)','400+     NBA players cost-per-performance scored','4        live assets auto-monitored hourly'],
+  tools:()=>['Python · SQL · PostgreSQL · pandas · scikit-learn','Power BI · DAX · Tableau · SQLite · Git','Random Forest · ETL Pipelines · Linear Regression'],
+  projects:()=>['1. Olist Delivery   - 96K orders, the 4-day review cliff','2. Churn Pipeline   - $1.06M revenue at risk sized','3. Market Predictor - hourly ingestion, 4 assets','4. Second Brain     - RAG knowledge base'],
+  metrics:()=>['10%→61%  negative reviews once 4+ days late','$1.06M   annual revenue at risk from churn','77%      cross-validated model accuracy','96K+     e-commerce orders analyzed'],
   contact:()=>['email:    slmartin2003@gmail.com','phone:    (908) 380-0431','github:   github.com/ShawnM20','linkedin: linkedin.com/in/shawn-martin-7861a6363'],
   status:()=>['🟢 Open to Data Analyst / ML Engineer roles','   New Jersey / Remote'],
   hire:()=>['smart choice 😎','email: slmartin2003@gmail.com'],
